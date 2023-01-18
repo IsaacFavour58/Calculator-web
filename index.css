@@ -64,8 +64,8 @@ html{
 }
 .header h1{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 0.85rem;
-    font-weight: normal;
+    font-size: 1rem;
+    font-weight: 500px;
 }   
 .display{
     grid-area: display;

@@ -1,9 +1,26 @@
 const initApp = () => {
     const currentvalueElem = document.querySelector(".currentvalue")
     const previousvalueElem = document.querySelector(".previousvalue")
+    const inputEl = document.getElementById("inputs")
+    const historyEl = document.getElementById("history");
+    const btnEl = document.getElementById("btn1")
+//console.log(inputEl);
+//console.log(historyEl);
+
     let itemArray = [];
     const equationArray = [];
     let newNumberFlag = false;
+
+ 
+     
+     function historyView() {
+         historyEl.innerHTML = inputEl.value
+     }
+
+     btnEl.addEventListener("click", historyView);
+
+
+
 
     const inputButtons = document.querySelectorAll(".number");
     inputButtons.forEach(button => {
@@ -72,11 +89,11 @@ const initApp = () => {
                  newNumberFlag = true;
                  console.log(equationArray);
             }
-        });
+        }); 
 
     });
     const equalsbutton = document.querySelector(".equals");
-    equalsbutton.addEventListener("click", () =>{
+    equalsbutton.addEventListener("click" , () =>{
         const currentvalue = currentvalueElem.value
         let equationobj;
         //pressing equals repeatedly

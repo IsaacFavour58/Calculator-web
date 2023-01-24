@@ -209,20 +209,28 @@ button:active{
     }
     
    }
-   #history{
+   article{
+    display: flex;
+    gap: 5px;
+   }
+
+    .history{
+   
+    position: fixed;
+     left: 40%;
+    top: 10%;
     width: 200px;
-    height: 150px;
+    height: 100px;
     overflow-y: scroll;
     font-size: 1.1em;
     background-color: rgb(249, 5, 249);
     padding: 10px 20px;
-    position: fixed;
-    top: 65px;
-    right: 229px;
     box-shadow: 4px 4px 8px 6px rgba(0, 0, 0, 0.541);
     border-radius: 5px;
 
    }
+   
+   
    #history::-webkit-scrollbar{
     width: 0;
    }
@@ -235,9 +243,25 @@ button:active{
    #history p:last-child{
     font-size: 1.3em;
     font-weight: 500;
-    color: #eee;
+    color: #eee; 
 
    }
     
+   .active{
+    /* left: 30%; */
+    position: fixed;
+    /* left: 35%;
+   top: 10%;
+   width: 150px;
+   height: 100px;
+   overflow-y: scroll;
+   font-size: 1.1em;
+   background-color: rgb(249, 5, 249);
+   padding: 10px 20px;
+   box-shadow: 4px 4px 8px 6px rgba(0, 0, 0, 0.541);
+   border-radius: 5px; */
+     top: 15%; 
+     transition:  .6s;
+}
    
 

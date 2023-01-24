@@ -2,7 +2,8 @@ const initApp = () => {
     const currentvalueElem = document.querySelector(".currentvalue")
     const previousvalueElem = document.querySelector(".previousvalue")
     const inputEl = document.getElementById("inputs")
-    const historyEl = document.getElementById("history");
+    const historyEl = document.querySelector("p");
+    console.log(historyEl);
     const btnEl = document.getElementById("btn1")
 //console.log(inputEl);
 //console.log(historyEl);
@@ -11,16 +12,7 @@ const initApp = () => {
     const equationArray = [];
     let newNumberFlag = false;
 
- 
-     
-     function historyView() {
-         historyEl.innerHTML = inputEl.value
-     }
-
-     btnEl.addEventListener("click", historyView);
-
-
-
+   
 
     const inputButtons = document.querySelectorAll(".number");
     inputButtons.forEach(button => {
@@ -92,6 +84,30 @@ const initApp = () => {
         }); 
 
     });
+
+    btnEl.addEventListener("click", () =>{
+        historyView()
+        if (historyEl.className === 'history') {
+            classList.add('active');
+            console.log({ans: true, historyEl});
+        }
+     });
+     localStorage.setItem('value', JSON.stringify(historyEl));
+     JSON.parse(localStorage.getItem("value"))
+ 
+
+     function historyView() {
+         historyEl.innerHTML += `${equationArray[0].num1}
+          ${equationArray[0].op} ${equationArray[0].num2} = ${inputEl.value} <br/>`
+
+    //     if (historyEl.className === 'history') {
+    //         classList.add('active')
+    //         console.log({ans: true, historyEl});
+    // }
+        
+     }
+
+
     const equalsbutton = document.querySelector(".equals");
     equalsbutton.addEventListener("click" , () =>{
         const currentvalue = currentvalueElem.value

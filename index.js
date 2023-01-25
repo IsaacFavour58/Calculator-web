@@ -91,6 +91,7 @@ const initApp = () => {
             classList.add('active');
             console.log({ans: true, historyEl});
         }
+
      });
      localStorage.setItem('value', JSON.stringify(historyEl));
      JSON.parse(localStorage.getItem("value"))
@@ -100,10 +101,12 @@ const initApp = () => {
          historyEl.innerHTML += `${equationArray[0].num1}
           ${equationArray[0].op} ${equationArray[0].num2} = ${inputEl.value} <br/>`
 
-    //     if (historyEl.className === 'history') {
-    //         classList.add('active')
-    //         console.log({ans: true, historyEl});
-    // }
+        if (historyEl.className === 'history') {
+            classList.add('active')
+            console.log({ans: true, historyEl});
+        }else{
+           classList.remove("active")
+    }
         
      }
 

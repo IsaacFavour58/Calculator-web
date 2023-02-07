@@ -2,9 +2,10 @@ const initApp = () => {
     const currentvalueElem = document.querySelector(".currentvalue")
     const previousvalueElem = document.querySelector(".previousvalue")
     const inputEl = document.getElementById("inputs")
-    const historyEl = document.querySelector("p");
+    const historyEl = document.getElementById("his");
     console.log(historyEl);
     const btnEl = document.getElementById("btn1")
+    
 //console.log(inputEl);
 //console.log(historyEl);
 
@@ -21,6 +22,7 @@ const initApp = () => {
             const newInput = event.target.textContent;
             if(newNumberFlag){
               currentvalueElem.value = newInput;  
+
               newNumberFlag = false
             }else{
                 currentvalueElem.value = 
@@ -84,30 +86,33 @@ const initApp = () => {
         }); 
 
     });
+btnEl.addEventListener('click',function(){
+    historyEl.classList.toggle('active');
+    historyView()
+})
+    // btnEl.addEventListener("click", () =>{
+    //     historyView()
+    //     // if (historyEl.className === 'history') {
+    //     //     classList.add('active');
+    //     //     console.log({ans: true, historyEl});
+    //     // }
 
-    btnEl.addEventListener("click", () =>{
-        historyView()
-        if (historyEl.className === 'history') {
-            classList.add('active');
-            console.log({ans: true, historyEl});
-        }
-
-     });
-     localStorage.setItem('value', JSON.stringify(historyEl));
-     JSON.parse(localStorage.getItem("value"))
- 
+    //  });
+    
 
      function historyView() {
          historyEl.innerHTML += `${equationArray[0].num1}
           ${equationArray[0].op} ${equationArray[0].num2} = ${inputEl.value} <br/>`
 
-        if (historyEl.className === 'history') {
-            classList.add('active')
-            console.log({ans: true, historyEl});
-        }else{
-           classList.remove("active")
-    }
-        
+    //     if (historyEl.className === 'history') {
+    //         classList.add('active')
+    //         console.log({ans: true, historyEl});
+    //     }else{
+    //        classList.remove("active")
+    // }
+    localStorage.setItem('value', historyEl.innerHTML)
+    localStorage.getItem("value")
+
      }
 
 

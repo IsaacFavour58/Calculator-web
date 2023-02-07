@@ -218,7 +218,7 @@ button:active{
    
     position: fixed;
      left: 40%;
-    top: -10%;
+    top: -20%;
     width: 200px;
     height: 100px;
     overflow-y: scroll;
@@ -249,7 +249,7 @@ button:active{
     
    .active{
     /* left: 30%; */
-    position: fixed;
+    /* position: fixed; */
     /* left: 35%;
    top: 10%;
    width: 150px;
